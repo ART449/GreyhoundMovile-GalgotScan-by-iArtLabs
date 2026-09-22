@@ -1,0 +1,36 @@
+node_modules/
+.nitro/
+.output/
+.tanstack/
+.vercel/
+.vite/
+.grok/
+dist/
+coverage/
+
+*.log
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+
+# Sandbox / QA local
+artifacts/
+attachments/
+screenshots/
+.project_id
+.node_modules.lock
+startup.sh
+AGENTS.md
+public/__grok/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db

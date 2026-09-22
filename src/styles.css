@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #120406;
+  --color-bg-deep: #0a0203;
+  --color-wall: #210709;
+  --color-surface: #2c1014;
+  --color-surface-2: #3a0d12;
+  --color-fg: #f4f7fb;
+  --color-muted: #b7a6a8;
+  --color-chrome: #c9ced4;
+  --color-crimson: #c8102e;
+  --color-crimson-lo: #8f0a20;
+  --color-ok: #37c26d;
+  --color-warn: #f2b134;
+  --color-bad: #e0403f;
+  --color-border: #5a2a30;
+  --color-ring: #c8102e;
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Barlow Condensed", "IBM Plex Sans", ui-sans-serif, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  --radius: 0.75rem;
+  --shadow-border: 0 0 0 1px rgba(255, 255, 255, 0.08);
+  --shadow-border-hover: 0 0 0 1px rgba(255, 255, 255, 0.13);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body,
+  #app {
+    min-height: 100%;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes galgot-scan {
+  0% {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(220%);
+    opacity: 0;
+  }
+}
+
+@keyframes galgot-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes galgot-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.stagger-in {
+  animation: galgot-enter 400ms ease-out both;
+}
+.stagger-in:nth-child(1) {
+  animation-delay: 0ms;
+}
+.stagger-in:nth-child(2) {
+  animation-delay: 80ms;
+}
+.stagger-in:nth-child(3) {
+  animation-delay: 160ms;
+}
+.stagger-in:nth-child(4) {
+  animation-delay: 240ms;
+}
+.stagger-in:nth-child(5) {
+  animation-delay: 320ms;
+}
+.stagger-in:nth-child(6) {
+  animation-delay: 400ms;
+}
